@@ -325,16 +325,13 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
    ========================================================================== */
 .logos { padding: 8px 0 72px; }
 .logos-title { text-align: center; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); font-weight: 500; margin-bottom: 28px; }
-.logo-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+.logo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .logo-item {
   height: 64px; border-radius: 12px; display: flex; align-items: center; justify-content: center; gap: 8px;
-  color: #55524e; font-weight: 600; font-size: 17px; letter-spacing: -0.01em;
-  filter: grayscale(1); opacity: .85; transition: opacity .2s;
+  padding: 8px 16px; opacity: .9; transition: opacity .2s;
 }
 .logo-item:hover { opacity: 1; }
-.logo-item.serif { font-family: var(--serif); font-weight: 700; }
-.logo-item.caps { text-transform: uppercase; letter-spacing: .08em; font-size: 14px; }
-.logo-item.light { font-weight: 400; }
+.logo-item img { display: block; width: 100%; max-width: 180px; height: 100%; object-fit: contain; }
 @media (max-width: 900px) { .logo-grid { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 520px) { .logo-grid { grid-template-columns: repeat(2, 1fr); } }
 

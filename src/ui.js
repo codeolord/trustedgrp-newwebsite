@@ -492,24 +492,16 @@ function hostingArt() {
    Reusable sections
    -------------------------------------------------------------------------- */
 const LOGOS = [
-  { name: 'Northwind', glyph: 'graduation', cls: '' },
-  { name: 'Meridian University', glyph: '', cls: 'serif' },
-  { name: 'Kestrel Labs', glyph: 'bolt', cls: '' },
-  { name: 'BLUEPEAK', glyph: '', cls: 'caps' },
-  { name: 'Oakline', glyph: 'heart', cls: 'light' },
-  { name: 'Polaris Institute', glyph: 'star', cls: '' },
-  { name: 'Brightpath', glyph: 'sparkles', cls: '' },
-  { name: 'Harbor & Co.', glyph: '', cls: 'serif' },
-  { name: 'NOVAFORM', glyph: 'layers', cls: 'caps' },
-  { name: 'Atlas Learning', glyph: 'globe', cls: '' },
-  { name: 'Cedar College', glyph: '', cls: 'serif' },
-  { name: 'Summit Health', glyph: 'plus', cls: 'light' },
+  { name: 'GNT', image: '/assets/customers/gnt-logo.png' },
+  { name: 'Execute Tech Academy', image: '/assets/customers/execute-tech-academy-logo.png' },
+  { name: 'dreel academy', image: '/assets/customers/dreel-academy-logo.png' },
+  { name: 'Villa 3 Estate Management', image: '/assets/customers/villa-3-estate-management.png' },
 ];
 
 function logoWall(title = 'Trusted by schools, training providers and global teams', count = 12) {
   return `<section class="logos" aria-label="Customers"><div class="container">
     <p class="logos-title">${esc(title)}</p>
-    <div class="logo-grid">${join(LOGOS.slice(0, count), (l) => `<div class="logo-item ${l.cls}">${l.glyph ? icon(l.glyph, 20) : ''}${esc(l.name)}</div>`)}</div>
+    <div class="logo-grid">${join(LOGOS.slice(0, count), (l) => `<div class="logo-item"><img src="${l.image}" alt="${esc(l.name)}" loading="lazy"></div>`)}</div>
   </div></section>`;
 }
 

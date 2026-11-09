@@ -499,9 +499,11 @@ const LOGOS = [
 ];
 
 function logoWall(title = 'Trusted by schools, training providers and global teams', count = 12) {
+  const logos = LOGOS.slice(0, count);
+  const renderGroup = (isDuplicate = false) => `<div class="logo-group"${isDuplicate ? ' aria-hidden="true"' : ' role="list"'}>${join(logos, (l) => `<div class="logo-item"${isDuplicate ? '' : ' role="listitem"'}><img src="${l.image}" alt="${isDuplicate ? '' : esc(l.name)}" loading="lazy"></div>`)}</div>`;
   return `<section class="logos" aria-label="Customers"><div class="container">
     <p class="logos-title">${esc(title)}</p>
-    <div class="logo-grid">${join(LOGOS.slice(0, count), (l) => `<div class="logo-item"><img src="${l.image}" alt="${esc(l.name)}" loading="lazy"></div>`)}</div>
+    <div class="logo-marquee"><div class="logo-track">${renderGroup()}${renderGroup(true)}</div></div>
   </div></section>`;
 }
 
@@ -514,13 +516,12 @@ function testimonials(list) {
           <div>
             <span class="quote-mark">${icon('quote', 34)}</span>
             <blockquote class="quote-text">${esc(q.quote)}</blockquote>
-            <figcaption class="quote-who"><strong>${esc(q.name)}</strong><span>${esc(q.role)}</span></figcaption>
+            <figcaption class="quote-who"><strong>${esc(q.name || q.organization)}</strong><span>${q.name ? esc(q.organization) : 'Trusted Verifier client'}</span></figcaption>
           </div>
           <div class="quote-art" style="background:${q.tint || 'var(--peach)'}">
             <span class="blob" style="width:60%;height:60%;left:-10%;top:-10%;background:${blobs[i % blobs.length]}"></span>
             <span class="blob" style="width:40%;height:40%;right:-6%;bottom:-6%;background:${blobs[(i + 2) % blobs.length]}"></span>
-            <div class="portrait" style="background:${AV_COLORS[i % AV_COLORS.length]}">${esc(initials(q.name))}</div>
-            ${q.metric ? `<div class="quote-metric"><b>${esc(q.metric[0])}</b>${esc(q.metric[1])}</div>` : ''}
+            <div class="portrait" style="background:${AV_COLORS[i % AV_COLORS.length]}">${esc(initials(q.organization))}</div>
           </div>
         </figure>
       </div>`)}
@@ -560,7 +561,8 @@ function ctaBand({ title = 'See what Trusted Verifier can do', lead = 'Talk with
 }
 
 function intLogo(intg, sm = false) {
-  return `<span class="int-logo${sm ? ' int-logo--sm' : ''}" style="background:${intg.color}">${esc(intg.mono || intg.name[0])}</span>`;
+  const logo = intg.logo ? `<img src="/assets/integrations/${intg.logo}" alt="">` : esc(intg.mono || intg.name[0]);
+  return `<span class="int-logo${sm ? ' int-logo--sm' : ''}"${intg.logo ? '' : ` style="background:${intg.color}"`}>${logo}</span>`;
 }
 
 function postCover(post, size = 28) {

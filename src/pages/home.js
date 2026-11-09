@@ -4,25 +4,9 @@ const { mock } = require('./shared');
 const { integrations, testimonials, homeFaq, posts, certificateTemplates } = require('../data/content');
 const site = require('../site');
 
-const integrationLogoFiles = {
-  Zapier: 'zapier.png',
-  HubSpot: 'hubspot.png',
-  Salesforce: 'salesforce.png',
-  'Google Sheets': 'google-sheets.png',
-  'Google Forms': 'google-forms.png',
-  'Microsoft Excel': 'excel.png',
-  Webflow: 'webflow.png',
-  Jotform: 'jotform.png',
-  'LearnWorlds': 'learnworlds.png',
-  TalentLMS: 'talentlms.png',
-  Airtable: 'airtable.png',
-  Typeform: 'typeform.png',
-  Moodle: 'moodle.png',
-};
 const integrationTile = (integration) => {
-  const file = integrationLogoFiles[integration.name];
-  if (!file) return '';
-  return `<a class="int-tile" href="/integrations?q=${encodeURIComponent(integration.name)}"><img class="int-logo-image" src="/assets/integrations/${file}" alt="${esc(integration.name)} logo"><span>${esc(integration.name)}</span></a>`;
+  if (!integration.logo) return '';
+  return `<a class="int-tile" href="/integrations?q=${encodeURIComponent(integration.name)}"><img class="int-logo-image" src="/assets/integrations/${integration.logo}" alt="${esc(integration.name)} logo"><span>${esc(integration.name)}</span></a>`;
 };
 
 const tabs = [
@@ -84,7 +68,7 @@ const body = `
       <button class="btn btn--secondary btn--lg" data-open="tour">${icon('playFill', 16)} Take the 1-minute tour</button>
     </div>
     <div class="hero-proof">
-      <div class="avatars">${join(['Priya Raman', 'Marcus Bell', 'Elena Varga', 'Tomás Herrera'], (n, i) => `<span style="background:${ui.AV_COLORS[i]}">${ui.initials(n)}</span>`)}</div>
+      <div class="avatars">${join(['Adaeze Okafor', 'Emeka Eze', 'Yetunde Balogun', 'Chinedu Nwosu'], (n, i) => `<span style="background:${ui.AV_COLORS[i]}">${ui.initials(n)}</span>`)}</div>
       <span>Free forever for up to 250 credentials a year</span>
     </div>
   </div>

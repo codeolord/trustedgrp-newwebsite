@@ -10,7 +10,7 @@ npm run build   # write the static site to dist/ and check every internal link
 npm start       # build once and serve
 ```
 
-Deploy by uploading `dist/` to any static host (Netlify, Vercel, Cloudflare Pages, S3, nginx). Pretty URLs such as `/pricing` map to `/pricing/index.html`; `404.html`, `sitemap.xml` and `robots.txt` are generated too.
+Deploy by uploading `dist/` to any static host (Netlify, Vercel, Cloudflare Pages, S3, nginx). Vercel is configured in `vercel.json` to run `npm run build` and serve `dist/`. Pretty URLs such as `/pricing` map to `/pricing/index.html`; `404.html`, `sitemap.xml` and `robots.txt` are generated too.
 
 ## Pages (51)
 

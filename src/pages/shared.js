@@ -59,25 +59,9 @@ function templatesMock() {
 
 function integrationsMock() {
   const list = integrations.slice(0, 8);
-  const logos = {
-    Zapier: 'zapier.png',
-    HubSpot: 'hubspot.png',
-    Salesforce: 'salesforce.png',
-    'Google Sheets': 'google-sheets.png',
-    'Google Forms': 'google-forms.png',
-    'Microsoft Excel': 'excel.png',
-    Webflow: 'webflow.png',
-    Jotform: 'jotform.png',
-    LearnWorlds: 'learnworlds.png',
-    TalentLMS: 'talentlms.png',
-    Airtable: 'airtable.png',
-    Typeform: 'typeform.png',
-    Moodle: 'moodle.png',
-  };
   const integrationTile = (integration) => {
-    const logo = logos[integration.name];
-    if (!logo) return '';
-    return `<div class="int-tile"><img class="int-logo-image" src="/assets/integrations/${logo}" alt="${esc(integration.name)} logo"><span>${esc(integration.name)}</span></div>`;
+    if (!integration.logo) return '';
+    return `<div class="int-tile"><img class="int-logo-image" src="/assets/integrations/${integration.logo}" alt="${esc(integration.name)} logo"><span>${esc(integration.name)}</span></div>`;
   };
   return `<div class="int-cloud" style="grid-template-columns:repeat(4,1fr);width:100%">
     ${join(list.slice(0, 2), integrationTile)}
@@ -129,7 +113,7 @@ ${ui.logoWall('Used by teams at', 6)}
 
 <section class="section bg-sky"><div class="container">
   ${sectionHead({ eyebrow: 'Customer stories', title: 'Loved by teams who issue credentials every day' })}
-  ${ui.testimonials([testimonials[quoteIndex % testimonials.length], testimonials[(quoteIndex + 1) % testimonials.length], testimonials[(quoteIndex + 2) % testimonials.length]])}
+  ${ui.testimonials(testimonials)}
   <div class="btn-row btn-row--center mt-32">${btn('Read customer stories', '/customers', 'primary')}</div>
 </div></section>
 

@@ -1,54 +1,53 @@
 // Content data shared across pages. All names, quotes and figures are placeholders — replace with your own.
 
 const integrations = [
-  { name: 'Zapier', mono: 'Z', color: '#ff4f00', category: 'Automation', desc: 'Connect 6,000+ apps and issue credentials from any trigger.' },
-  { name: 'Make', mono: 'M', color: '#6d00cc', category: 'Automation', desc: 'Build visual scenarios that create and send credentials.' },
-  { name: 'HubSpot', mono: 'H', color: '#ff7a59', category: 'CRM & marketing', desc: 'Issue credentials when a deal closes or a contact hits a stage.' },
-  { name: 'Salesforce', mono: 'S', color: '#00a1e0', category: 'CRM & marketing', desc: 'Sync recipients and credential status with CRM records.' },
-  { name: 'Google Sheets', mono: 'GS', color: '#0f9d58', category: 'Forms & data', desc: 'Generate a certificate for every new row in a sheet.' },
-  { name: 'Moodle', mono: 'Mo', color: '#f98012', category: 'LMS', desc: 'Award certificates automatically on course completion.' },
-  { name: 'Canvas LMS', mono: 'C', color: '#e72429', category: 'LMS', desc: 'Map Canvas courses to credential templates.' },
-  { name: 'Typeform', mono: 'Tf', color: '#262627', category: 'Forms & data', desc: 'Send a credential when someone completes a form or quiz.' },
-  { name: 'Google Forms', mono: 'GF', color: '#673ab7', category: 'Forms & data', desc: 'Issue on submission, with answers mapped to fields.' },
-  { name: 'TalentLMS', mono: 'T', color: '#2b7de9', category: 'LMS', desc: 'Replace default LMS certificates with verifiable ones.' },
-  { name: 'LearnWorlds', mono: 'LW', color: '#1c1c3c', category: 'LMS', desc: 'Award credentials to learners as they finish courses.' },
-  { name: 'Thinkific', mono: 'Th', color: '#1c3d5a', category: 'LMS', desc: 'Automatically certify students in your online school.' },
-  { name: 'Teachable', mono: 'Te', color: '#1d1d1d', category: 'LMS', desc: 'Send branded certificates on course completion.' },
-  { name: 'Kajabi', mono: 'K', color: '#2e91fc', category: 'LMS', desc: 'Reward members and course buyers with credentials.' },
-  { name: 'Docebo', mono: 'D', color: '#3aa1d8', category: 'LMS', desc: 'Enterprise learning paths with verifiable outcomes.' },
-  { name: 'WordPress', mono: 'W', color: '#21759b', category: 'Website', desc: 'Embed credential verification on your WordPress site.' },
-  { name: 'Webflow', mono: 'Wf', color: '#4353ff', category: 'Website', desc: 'Add verification and wallet links to Webflow pages.' },
-  { name: 'Jotform', mono: 'J', color: '#ff6100', category: 'Forms & data', desc: 'Turn form submissions into ready-to-send credentials.' },
-  { name: 'Airtable', mono: 'A', color: '#e8a400', category: 'Forms & data', desc: 'Use Airtable bases as your recipient source.' },
-  { name: 'Microsoft Excel', mono: 'X', color: '#217346', category: 'Forms & data', desc: 'Import spreadsheets with automatic column matching.' },
-  { name: 'Eventbrite', mono: 'E', color: '#f05537', category: 'Events & video', desc: 'Certify attendees once an event has ended.' },
-  { name: 'Zoom', mono: 'Zo', color: '#2d8cff', category: 'Events & video', desc: 'Issue certificates to webinar attendees by duration.' },
-  { name: 'Microsoft Teams', mono: 'MT', color: '#5059c9', category: 'Communication', desc: 'Notify teams when credentials are issued or expire.' },
-  { name: 'Slack', mono: 'Sl', color: '#4a154b', category: 'Communication', desc: 'Celebrate new credentials in your Slack channels.' },
-  { name: 'Mailchimp', mono: 'Mc', color: '#241c15', category: 'CRM & marketing', desc: 'Sync recipients to audiences for follow-up campaigns.' },
-  { name: 'Pipedrive', mono: 'P', color: '#017737', category: 'CRM & marketing', desc: 'Trigger partner certifications from pipeline stages.' },
-  { name: 'LinkedIn', mono: 'in', color: '#0a66c2', category: 'Communication', desc: 'One-click “Add to profile” for every recipient.' },
+  { name: 'Zapier', mono: 'Z', color: '#ff4f00', logo: 'zapier.png', category: 'Automation', desc: 'Connect 6,000+ apps and issue credentials from any trigger.' },
+  { name: 'Make', mono: 'M', color: '#6d00cc', logo: 'make.svg', category: 'Automation', desc: 'Build visual scenarios that create and send credentials.' },
+  { name: 'HubSpot', mono: 'H', color: '#ff7a59', logo: 'hubspot.png', category: 'CRM & marketing', desc: 'Issue credentials when a deal closes or a contact hits a stage.' },
+  { name: 'Salesforce', mono: 'S', color: '#00a1e0', logo: 'salesforce.png', category: 'CRM & marketing', desc: 'Sync recipients and credential status with CRM records.' },
+  { name: 'Google Sheets', mono: 'GS', color: '#0f9d58', logo: 'google-sheets.png', category: 'Forms & data', desc: 'Generate a certificate for every new row in a sheet.' },
+  { name: 'Moodle', mono: 'Mo', color: '#f98012', logo: 'moodle.png', category: 'LMS', desc: 'Award certificates automatically on course completion.' },
+  { name: 'Canvas LMS', mono: 'C', color: '#e72429', logo: 'canvas.svg', category: 'LMS', desc: 'Map Canvas courses to credential templates.' },
+  { name: 'Typeform', mono: 'Tf', color: '#262627', logo: 'typeform.png', category: 'Forms & data', desc: 'Send a credential when someone completes a form or quiz.' },
+  { name: 'Google Forms', mono: 'GF', color: '#673ab7', logo: 'google-forms.png', category: 'Forms & data', desc: 'Issue on submission, with answers mapped to fields.' },
+  { name: 'TalentLMS', mono: 'T', color: '#2b7de9', logo: 'talentlms.png', category: 'LMS', desc: 'Replace default LMS certificates with verifiable ones.' },
+  { name: 'LearnWorlds', mono: 'LW', color: '#1c1c3c', logo: 'learnworlds.png', category: 'LMS', desc: 'Award credentials to learners as they finish courses.' },
+  { name: 'Thinkific', mono: 'Th', color: '#1c3d5a', logo: 'thinkific.png', category: 'LMS', desc: 'Automatically certify students in your online school.' },
+  { name: 'Teachable', mono: 'Te', color: '#1d1d1d', logo: 'teachable.png', category: 'LMS', desc: 'Send branded certificates on course completion.' },
+  { name: 'Kajabi', mono: 'K', color: '#2e91fc', logo: 'kajabi.png', category: 'LMS', desc: 'Reward members and course buyers with credentials.' },
+  { name: 'Docebo', mono: 'D', color: '#3aa1d8', logo: 'docebo.png', category: 'LMS', desc: 'Enterprise learning paths with verifiable outcomes.' },
+  { name: 'WordPress', mono: 'W', color: '#21759b', logo: 'wordpress.svg', category: 'Website', desc: 'Embed credential verification on your WordPress site.' },
+  { name: 'Webflow', mono: 'Wf', color: '#4353ff', logo: 'webflow.png', category: 'Website', desc: 'Add verification and wallet links to Webflow pages.' },
+  { name: 'Jotform', mono: 'J', color: '#ff6100', logo: 'jotform.png', category: 'Forms & data', desc: 'Turn form submissions into ready-to-send credentials.' },
+  { name: 'Airtable', mono: 'A', color: '#e8a400', logo: 'airtable.png', category: 'Forms & data', desc: 'Use Airtable bases as your recipient source.' },
+  { name: 'Microsoft Excel', mono: 'X', color: '#217346', logo: 'excel.png', category: 'Forms & data', desc: 'Import spreadsheets with automatic column matching.' },
+  { name: 'Eventbrite', mono: 'E', color: '#f05537', logo: 'eventbrite.png', category: 'Events & video', desc: 'Certify attendees once an event has ended.' },
+  { name: 'Zoom', mono: 'Zo', color: '#2d8cff', logo: 'zoom.svg', category: 'Events & video', desc: 'Issue certificates to webinar attendees by duration.' },
+  { name: 'Microsoft Teams', mono: 'MT', color: '#5059c9', logo: 'microsoft-teams.png', category: 'Communication', desc: 'Notify teams when credentials are issued or expire.' },
+  { name: 'Slack', mono: 'Sl', color: '#4a154b', logo: 'slack.png', category: 'Communication', desc: 'Celebrate new credentials in your Slack channels.' },
+  { name: 'Mailchimp', mono: 'Mc', color: '#241c15', logo: 'mailchimp.png', category: 'CRM & marketing', desc: 'Sync recipients to audiences for follow-up campaigns.' },
+  { name: 'Pipedrive', mono: 'P', color: '#017737', logo: 'pipedrive.png', category: 'CRM & marketing', desc: 'Trigger partner certifications from pipeline stages.' },
+  { name: 'LinkedIn', mono: 'in', color: '#0a66c2', logo: 'linkedin.png', category: 'Communication', desc: 'One-click “Add to profile” for every recipient.' },
   { name: 'Webhooks', mono: '{}', color: '#161616', category: 'Developer', desc: 'Get real-time events for issues, opens and shares.' },
   { name: 'REST API', mono: '</>', color: '#0b65ad', category: 'Developer', desc: 'Create, send and manage credentials programmatically.' },
   { name: 'MCP server', mono: 'AI', color: '#7a4ee0', category: 'Developer', desc: 'Let AI assistants issue and look up credentials safely.' },
 ];
 
 const testimonials = [
-  { quote: 'We used to spend two days formatting certificates after every cohort. Now it takes about ten minutes, and graduates have them the same afternoon.', name: 'Priya Raman', role: 'Program Lead, Northwind Academy', metric: ['90%', 'less admin time'], tint: 'var(--peach)' },
-  { quote: 'The analytics surprised us. We can see who opened, who shared, and which courses drive the most LinkedIn posts.', name: 'Marcus Bell', role: 'Head of Marketing, Brightpath', metric: ['3.4×', 'more social shares'], tint: 'var(--sky)' },
-  { quote: 'Verification was the deal-breaker. Employers scan the QR code and see a live record — nobody emails our office to confirm anymore.', name: 'Elena Varga', role: 'Registrar, Meridian University', metric: ['0', 'manual verifications'], tint: 'var(--lav)' },
-  { quote: 'We issue badges for forty conference tracks. Setting up the rules once and letting the integration do the rest is exactly what we needed.', name: 'Tomás Herrera', role: 'Events Director, Polaris Institute', metric: ['12k', 'badges per event'], tint: 'var(--mint)' },
-  { quote: 'Our members actually show off their CPD certificates now. The branded wallet makes it feel like part of the association.', name: 'Grace Mensah', role: 'Membership Manager, Atlas Learning', metric: ['68%', 'of members share'], tint: 'var(--butter)' },
+  { quote: 'We issue badges for forty conference tracks. Setting up the rules once and letting the integration do the rest is exactly what we needed.', organization: 'Execute Tech Academy', tint: 'var(--mint)' },
+  { quote: 'We used to spend two days formatting certificates after every cohort. Now it takes about ten minutes, and graduates have them the same afternoon.', organization: 'dreel academy', tint: 'var(--peach)' },
+  { quote: 'We’ve managed to automate the entire certificate process while boosting our brand as well. All thanks to Trusted Verifier.', organization: 'GNT', tint: 'var(--sky)' },
+  { quote: 'I love the tracking part, that you can see how recipients engaged with certificates. Trusted Verifier saved me tons of work.', organization: 'Villa 3 Solutions Estate Management', name: 'Anuoluwapo', tint: 'var(--lav)' },
 ];
 
 const homeFaq = [
   { q: 'What is a digital certificate?', a: '<p>A digital certificate is an online version of a paper certificate that proves someone completed a course, earned a skill or attended an event. Unlike a PDF on its own, it is hosted on a unique URL, can be verified instantly and can be shared to LinkedIn or a digital wallet.</p>' },
   { q: 'How do I create certificates in bulk?', a: '<p>Design a template once, then upload a CSV or Excel file (or connect a tool like Google Sheets or your LMS). Each row becomes a personalized credential, and you can send them all by email in one click or on a schedule.</p>' },
   { q: 'Can recipients and employers verify credentials?', a: '<p>Yes. Every credential has a unique ID, a public verification page and a QR code. Anyone can confirm that it is genuine, who issued it and whether it is still valid — without contacting you.</p>' },
-  { q: 'Is there a free plan?', a: '<p>Yes. The Starter plan is free forever and includes up to 250 credentials per year, the design builder, email delivery and verification pages. Upgrade only when your program grows.</p>' },
+  { q: 'Is there a free plan?', a: '<p>Yes. Pay in full for your first year on a paid plan and get an extra year free, the design builder, email delivery and verification pages.</p>' },
   { q: 'Can I use my own branding and domain?', a: '<p>Paid plans let you use your logo, colors, fonts, custom email sender and branded credential pages. Enterprise customers can host everything on their own domain, such as <em>credentials.yourschool.edu</em>.</p>' },
   { q: 'Which integrations are supported?', a: '<p>We connect natively with popular LMS, CRM, form and event tools, plus Zapier and Make for thousands more. Developers can use the REST API, webhooks or the MCP server. <a class="text-link" href="/integrations">See all integrations</a>.</p>' },
-  { q: 'Is my data secure?', a: '<p>Data is encrypted in transit and at rest, hosted in the EU or US, and protected by role-based permissions, audit logs and SSO on higher plans. Read more on our <a class="text-link" href="/legal-and-security">security page</a>.</p>' },
+  { q: 'Is my data secure?', a: '<p>Data is encrypted in transit and at rest, hosted in the EU or US, and protected by role-based permissions, audit logs and SSO on higher plans. Read more on our <a class="text-link" href="/legal-and-security">security page</a>. For information about Nigeria’s data protection and information technology policies, visit the <a class="text-link" href="https://ndpc.gov.ng/" target="_blank" rel="noopener noreferrer">Nigeria Data Protection Commission (NDPC)</a> and <a class="text-link" href="https://nitda.gov.ng/" target="_blank" rel="noopener noreferrer">NITDA</a>.</p>' },
 ];
 
 // Template galleries ---------------------------------------------------------
@@ -120,9 +119,9 @@ const documentTemplates = [
 
 // Blog -----------------------------------------------------------------------
 const authors = {
-  maya: { name: 'Maya Lindqvist', role: 'Head of Content' },
-  daniel: { name: 'Daniel Osei', role: 'Product Manager' },
-  ines: { name: 'Inês Carvalho', role: 'Customer Success Lead' },
+  maya: { name: 'Adaeze Okafor', role: 'Head of Content' },
+  daniel: { name: 'Emeka Eze', role: 'Product Manager' },
+  ines: { name: 'Yetunde Balogun', role: 'Customer Success Lead' },
 };
 
 const posts = [
@@ -204,7 +203,6 @@ const customers = [
     challenge: 'Every cohort ended with two days of copy-pasting names into slides, exporting PDFs and emailing them one by one. Mistakes were common and learners had no way to prove their credentials to employers.',
     solution: 'Northwind connected its LMS, built three branded templates and set certificates to send automatically when a learner passes the final assessment.',
     results: 'Certificates now arrive minutes after completion. Support tickets about certificates dropped to almost zero, and LinkedIn shares became one of the academy’s top referral sources.',
-    quote: testimonials[0],
   },
   {
     slug: 'meridian-university', org: 'Meridian University', industry: 'Higher education', glyph: 'building', tint: 'var(--lav)',
@@ -214,7 +212,6 @@ const customers = [
     challenge: 'Employers emailed the registrar daily to confirm degrees, and each request took staff time to research and answer.',
     solution: 'Meridian issued digital diplomas and transcripts on its own domain, each with a QR code and public verification page.',
     results: 'Verification requests now resolve themselves. Graduates share diplomas proudly, and the office reclaimed hours every week.',
-    quote: testimonials[2],
   },
   {
     slug: 'polaris-institute', org: 'Polaris Institute', industry: 'Events & conferences', glyph: 'ticket', tint: 'var(--mint)',
@@ -224,7 +221,6 @@ const customers = [
     challenge: 'Different roles needed different credentials, and attendance data lived in the event platform.',
     solution: 'Polaris connected its event tool and set up rules that issue the right badge to each attendee based on sessions attended.',
     results: 'Badges go out the evening the event closes. Social mentions during the following week tripled.',
-    quote: testimonials[3],
   },
   {
     slug: 'atlas-learning', org: 'Atlas Learning', industry: 'Professional association', glyph: 'users', tint: 'var(--butter)',
@@ -234,7 +230,6 @@ const customers = [
     challenge: 'Members lost track of CPD certificates and staff spent renewal season chasing paperwork.',
     solution: 'Atlas issued credentials with credits as attributes and enabled automatic expiry reminders.',
     results: 'Members now keep everything in one place and renew on time, and the wallet has become a reason to join.',
-    quote: testimonials[4],
   },
 ];
 
@@ -247,10 +242,10 @@ const changelog = [
 ];
 
 const team = [
-  ['Lena Hart', 'Co-founder & CEO', 'var(--sky)'], ['Omar Haddad', 'Co-founder & CTO', 'var(--peach)'],
-  ['Maya Lindqvist', 'Head of Content', 'var(--lav)'], ['Daniel Osei', 'Product Manager', 'var(--mint)'],
-  ['Inês Carvalho', 'Customer Success Lead', 'var(--butter)'], ['Kenji Mori', 'Lead Designer', 'var(--rose)'],
-  ['Sara Novak', 'Engineering Manager', 'var(--sky)'], ['Ade Bello', 'Partnerships', 'var(--peach)'],
+  ['Tolu Adebayo', 'Co-founder & CEO', 'var(--sky)'], ['Chinedu Nwosu', 'Co-founder & CTO', 'var(--peach)'],
+  ['Adaeze Okafor', 'Head of Content', 'var(--lav)'], ['Emeka Eze', 'Product Manager', 'var(--mint)'],
+  ['Yetunde Balogun', 'Customer Success Lead', 'var(--butter)'], ['Amina Yusuf', 'Lead Designer', 'var(--rose)'],
+  ['Favour Okonkwo', 'Engineering Manager', 'var(--sky)'], ['Ade Bello', 'Partnerships', 'var(--peach)'],
 ];
 
 module.exports = {

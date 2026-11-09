@@ -152,7 +152,6 @@ const customerPages = customers.map((c, i) => ({
 <section class="section--sm"><div class="container container--text prose">
   <h2>The challenge</h2><p>${esc(c.challenge)}</p>
   <h2>The solution</h2><p>${esc(c.solution)}</p>
-  <blockquote>“${esc(c.quote.quote)}”<br><span class="small muted">— ${esc(c.quote.name)}, ${esc(c.quote.role)}</span></blockquote>
   <h2>The results</h2><p>${esc(c.results)}</p>
 </div></section>
 <section class="section bg-beige"><div class="container">

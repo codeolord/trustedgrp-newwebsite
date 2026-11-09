@@ -1,7 +1,7 @@
 // Page shell: <head>, header with mega menus, mobile drawer, footer, help widget.
 const site = require('./site');
 const { icon } = require('./icons');
-const { esc, join, editorMock, sendMock, verifyMock, certSVG } = require('./ui');
+const { esc, join, editorMock, sendMock, verifyMock, certSVG, intLogo } = require('./ui');
 const { integrations } = require('./data/content');
 
 const NAV = {
@@ -78,7 +78,7 @@ function header(path) {
         <button class="nav-link" aria-expanded="false"${active(['/integrations', '/developers'])}>Integrations ${icon('chevronDown', 16, 'class="chev"')}</button>
         <div class="mega mega--2">
           <div class="mega-col"><div class="mega-label">Popular</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px">${join(topInts, (i) => `<a class="mega-int" href="/integrations?q=${encodeURIComponent(i.name)}"><span class="int-logo int-logo--sm" style="background:${i.color}">${esc(i.mono || i.name[0])}</span>${esc(i.name)}</a>`)}</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px">${join(topInts, (i) => `<a class="mega-int" href="/integrations?q=${encodeURIComponent(i.name)}">${intLogo(i, true)}${esc(i.name)}</a>`)}</div>
           </div>
           <div class="mega-col"><div class="mega-label">Build your own</div>
             ${megaLink({ href: '/developers', icon: 'code', title: 'API & MCP server', desc: 'Issue credentials from your own app or AI agent' })}

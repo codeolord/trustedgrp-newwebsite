@@ -153,7 +153,7 @@ ${ui.logoWall('Enterprise teams that issue with us', 12)}
     ${checklist(['Unlimited workspaces', 'Central admin and billing', 'API keys per workspace'])}
   </div><div class="split-media tint-mint" style="border-radius:24px;padding:clamp(20px,4vw,44px)">${mock('send')}</div></div>
 </div></section>
-<section class="section bg-sky"><div class="container">${ui.testimonials([testimonials[2], testimonials[0], testimonials[3]])}</div></section>
+<section class="section bg-sky"><div class="container">${ui.testimonials(testimonials)}</div></section>
 <section class="section"><div class="container"><div class="split split--even">
   <div class="split-copy">
     <h2 class="h2">Let’s talk about your program</h2>

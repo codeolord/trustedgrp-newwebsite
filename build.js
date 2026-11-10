@@ -39,6 +39,7 @@ function build({ quiet = false } = {}) {
 
   fs.rmSync(DIST, { recursive: true, force: true });
   copyDir(path.join(SRC, 'assets'), path.join(DIST, 'assets'));
+  fs.writeFileSync(path.join(DIST, '.htaccess'), 'Options -Indexes\nDirectoryIndex index.html\nErrorDocument 404 /404.html\n');
 
   const html = new Map();
   for (const p of pages) {

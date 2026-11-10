@@ -55,8 +55,9 @@ const blogIndex = {
 <section class="section--sm"><div class="container"><div class="newsletter">
   <div class="stack-sm"><h2 class="h3">Get new guides in your inbox</h2><p class="muted">One useful email a month. No spam, unsubscribe anytime.</p></div>
   <div>
-    <form class="form newsletter-form" data-form>
+    <form class="form newsletter-form" data-form="newsletter">
       <div class="field"><label class="sr-only" for="nl-email">Email</label><input class="input" id="nl-email" type="email" name="email" placeholder="you@company.com" required><span class="err">Enter a valid email address</span></div>
+      <p class="form-submit-error" data-form-error role="alert" hidden></p>
       <button class="btn btn--primary" type="submit">Subscribe</button>
     </form>
     <div class="form-success" style="padding:0;justify-items:start;text-align:left"><b>You're subscribed 🎉</b><span class="small muted">Watch your inbox for the next issue.</span></div>

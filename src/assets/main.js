@@ -293,7 +293,7 @@
       i.addEventListener('blur', () => { if (i.value) validateField(i); });
       i.addEventListener('input', () => { if (i.closest('.field.has-error')) validateField(i); });
     });
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const inputs = $$('input, select, textarea', form);
       const results = inputs.map(validateField);
@@ -302,15 +302,32 @@
       const submit = $('[type="submit"]', form);
       const label = submit ? submit.innerHTML : '';
       if (submit) { submit.disabled = true; submit.textContent = 'Sending…'; }
-      // TODO: replace with a real request, e.g. fetch(form.action, { method: 'POST', body: new FormData(form) })
-      setTimeout(() => {
-        if (submit) { submit.disabled = false; submit.innerHTML = label; }
-        const emailInput = $('input[type="email"]', form);
-        const slot = form.nextElementSibling && $('[data-sent-email]', form.nextElementSibling);
+      const emailInput = $('input[type="email"]', form);
+      const slot = form.nextElementSibling && $('[data-sent-email]', form.nextElementSibling);
+      const errorSlot = $('[data-form-error]', form);
+      if (errorSlot) errorSlot.hidden = true;
+      try {
+        const apiBase = ['trustedgrp.com', 'www.trustedgrp.com'].includes(location.hostname) ? 'https://api.trustedgrp.com' : '';
+        const response = await fetch(`${apiBase}/api/forms`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ type: form.dataset.form, ...Object.fromEntries(new FormData(form).entries()) }),
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(result.error || 'We could not submit the form. Please try again.');
         if (slot && emailInput) slot.textContent = emailInput.value;
         form.classList.add('is-sent');
         form.reset();
-      }, 700);
+      } catch (error) {
+        if (errorSlot) {
+          errorSlot.textContent = error.message || 'We could not submit the form. Please try again.';
+          errorSlot.hidden = false;
+        } else {
+          toast(error.message || 'We could not submit the form. Please try again.');
+        }
+      } finally {
+        if (submit) { submit.disabled = false; submit.innerHTML = label; }
+      }
     });
   });
   $$('[data-form-again]').forEach((b) => b.addEventListener('click', () => {

@@ -294,11 +294,12 @@ const contact = {
       </div>
     </div>
     <div class="form-card">
-      <form class="form" data-form>
+      <form class="form" data-form="contact">
         <div class="form-row">${field('c-name', 'Name')}${field('c-email', 'Email', { type: 'email', err: 'Enter a valid email address' })}</div>
         ${selectField('c-topic', 'Topic', ['Sales question', 'Product support', 'Billing', 'Partnerships', 'Press', 'Something else'])}
         <div class="field"><label for="c-msg">Message</label><textarea class="textarea" id="c-msg" name="message" required minlength="10"></textarea><span class="err">Please write at least 10 characters</span></div>
-        <label class="check"><input type="checkbox" required> <span>I agree to the <a class="text-link" href="/privacy">privacy policy</a>.</span></label>
+        <label class="check"><input type="checkbox" name="consent" value="yes" required> <span>I agree to the <a class="text-link" href="/privacy">privacy policy</a>.</span></label>
+        <p class="form-submit-error" data-form-error role="alert" hidden></p>
         <button class="btn btn--primary btn--lg btn--block" type="submit">Send message</button>
       </form>
       <div class="form-success"><span class="ok">${icon('check', 28)}</span><h3 class="h4">Message received</h3><p class="muted">Thanks for reaching out. We’ll reply to <b data-sent-email></b> shortly.</p><button class="btn btn--secondary btn--sm" data-form-again>Send another message</button></div>
@@ -356,12 +357,13 @@ const affiliate = {
 <section class="section" id="apply"><div class="container"><div class="split split--even" style="align-items:start">
   <div class="split-copy"><h2 class="h2">Who it’s for</h2><p class="lead">Educators, consultants, LMS experts, agencies and creators whose audiences issue certificates.</p>${checklist(['Course creators and education bloggers', 'L&D and HR consultants', 'Agencies building learning platforms', 'Event and community organizers'])}</div>
   <div class="form-card">
-    <form class="form" data-form>
+    <form class="form" data-form="affiliate">
       ${field('af-name', 'Full name')}
       ${field('af-email', 'Email', { type: 'email', err: 'Enter a valid email address' })}
       ${field('af-site', 'Website or profile URL', { type: 'url', err: 'Enter a URL starting with https://', placeholder: 'https://' })}
-      <div class="field"><label for="af-how">How will you promote ${esc(site.name)}?</label><textarea class="textarea" id="af-how" required></textarea><span class="err">Tell us briefly how you’ll promote us</span></div>
-      <label class="check"><input type="checkbox" required> <span>I agree to the <a class="text-link" href="/terms">affiliate terms</a>.</span></label>
+      <div class="field"><label for="af-how">How will you promote ${esc(site.name)}?</label><textarea class="textarea" id="af-how" name="promotionPlan" required minlength="10"></textarea><span class="err">Tell us briefly how you’ll promote us</span></div>
+      <label class="check"><input type="checkbox" name="consent" value="yes" required> <span>I agree to the <a class="text-link" href="/terms">affiliate terms</a>.</span></label>
+      <p class="form-submit-error" data-form-error role="alert" hidden></p>
       <button class="btn btn--primary btn--lg btn--block" type="submit">Submit application</button>
     </form>
     <div class="form-success"><span class="ok">${icon('check', 28)}</span><h3 class="h4">Application received</h3><p class="muted">We’ll review it and email <b data-sent-email></b> within two business days.</p></div>

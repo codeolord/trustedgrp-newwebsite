@@ -159,21 +159,10 @@ function footer() {
 </footer>`;
 }
 
-function helpWidget() {
-  return `<button class="help-fab" aria-label="Open help menu" aria-expanded="false" aria-controls="help-panel" data-help-toggle>${icon('message', 24)}</button>
-<div class="help-panel" id="help-panel" data-help-panel role="dialog" aria-label="Help">
-  <div data-chat-home>
-    <div class="help-head"><b style="font-size:18px;font-weight:500">Hi there 👋</b><p>How can we help you today?</p></div>
-    <div class="help-links">
-      <button type="button" class="help-chat-link" data-chat-open><span class="icon-tile">${icon('message', 18)}</span><span>Chat with support<small>Talk directly with our support team</small></span></button>
-      <a href="${site.demoUrl}"><span class="icon-tile">${icon('calendar', 18)}</span><span>Book a demo<small>See ${esc(site.name)} with a product expert</small></span></a>
-      <a href="/contact"><span class="icon-tile">${icon('headset', 18)}</span><span>Contact support<small>Send our team a message</small></span></a>
-      <a href="/certificate-templates"><span class="icon-tile">${icon('grid', 18)}</span><span>Browse templates<small>Hundreds of ready-made designs</small></span></a>
-      <a href="/blog"><span class="icon-tile">${icon('book', 18)}</span><span>Guides &amp; articles<small>Learn credentialing best practices</small></span></a>
-    </div>
-  </div>
-  <section class="visitor-chat" data-chat-view hidden aria-label="Chat with support">
-    <div class="visitor-chat-head"><button type="button" class="chat-back" data-chat-back aria-label="Back to help options">${icon('chevronLeft', 18)}</button><div><b>Trusted Verifier Support</b><small>Messages are usually answered during business hours</small></div></div>
+function visitorChat({ embedded = false } = {}) {
+  const backLabel = embedded ? 'Close support chat' : 'Back to help options';
+  return `<section class="visitor-chat" data-chat-view${embedded ? '' : ' hidden'} aria-label="Chat with support">
+    <div class="visitor-chat-head"><button type="button" class="chat-back" data-chat-back aria-label="${backLabel}">${icon(embedded ? 'close' : 'chevronLeft', 18)}</button><div><b>Trusted Verifier Support</b><small>Messages are usually answered during business hours</small></div></div>
     <div class="chat-scroll" data-chat-messages role="log" aria-live="polite" aria-relevant="additions text"></div>
     <div class="chat-error" data-chat-error role="alert" hidden></div>
     <form class="chat-start-form" data-chat-start-form>
@@ -190,6 +179,23 @@ function helpWidget() {
     </form>
     <p class="chat-closed" data-chat-closed hidden>This conversation is closed. <button type="button" class="text-link" data-chat-new>Start a new chat</button> to contact the team.</p>
   </section>
+`;
+}
+
+function helpWidget() {
+  return `<button class="help-fab" aria-label="Open help menu" aria-expanded="false" aria-controls="help-panel" data-help-toggle>${icon('message', 24)}</button>
+<div class="help-panel" id="help-panel" data-help-panel role="dialog" aria-label="Help">
+  <div data-chat-home>
+    <div class="help-head"><b style="font-size:18px;font-weight:500">Hi there 👋</b><p>How can we help you today?</p></div>
+    <div class="help-links">
+      <button type="button" class="help-chat-link" data-chat-open><span class="icon-tile">${icon('message', 18)}</span><span>Chat with support<small>Talk directly with our support team</small></span></button>
+      <a href="${site.demoUrl}"><span class="icon-tile">${icon('calendar', 18)}</span><span>Book a demo<small>See ${esc(site.name)} with a product expert</small></span></a>
+      <a href="/contact"><span class="icon-tile">${icon('headset', 18)}</span><span>Contact support<small>Send our team a message</small></span></a>
+      <a href="/certificate-templates"><span class="icon-tile">${icon('grid', 18)}</span><span>Browse templates<small>Hundreds of ready-made designs</small></span></a>
+      <a href="/blog"><span class="icon-tile">${icon('book', 18)}</span><span>Guides &amp; articles<small>Learn credentialing best practices</small></span></a>
+    </div>
+  </div>
+  ${visitorChat()}
 </div>`;
 }
 
@@ -254,4 +260,4 @@ ${needsTour ? tourModal() : ''}
 `;
 }
 
-module.exports = { page, NAV };
+module.exports = { page, visitorChat, NAV };

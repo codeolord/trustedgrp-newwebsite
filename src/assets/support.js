@@ -108,9 +108,23 @@
     };
     openButton.addEventListener('click', openChat);
     backButton.addEventListener('click', () => {
+      if (panel.hasAttribute('data-chat-embed')) {
+        clearInterval(pollTimer);
+        window.parent.postMessage({ type: 'trusted-verifier-chat-close' }, '*');
+        return;
+      }
       view.hidden = true;
       home.hidden = false;
       clearInterval(pollTimer);
+    });
+    if (panel.hasAttribute('data-chat-auto-open')) openChat();
+    window.addEventListener('message', (event) => {
+      if (event.source !== window.parent || !event.data || typeof event.data !== 'object') return;
+      if (event.data.type === 'trusted-verifier-chat-pause') clearInterval(pollTimer);
+      if (event.data.type === 'trusted-verifier-chat-resume') {
+        if (conversationId) syncConversation(true);
+        startPolling();
+      }
     });
     startForm.addEventListener('submit', async (event) => {
       event.preventDefault();

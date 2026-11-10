@@ -5,7 +5,7 @@ const path = require('path');
 const ROOT = __dirname;
 const SRC = path.join(ROOT, 'src');
 const DIST = path.join(ROOT, 'dist');
-const PAGE_MODULES = ['home', 'pricing', 'features', 'solutions', 'templates', 'blog', 'company', 'legal', 'support'];
+const PAGE_MODULES = ['home', 'pricing', 'features', 'solutions', 'templates', 'blog', 'company', 'legal', 'support', 'support-widget'];
 
 function clearRequireCache() {
   Object.keys(require.cache).forEach((k) => { if (k.startsWith(SRC)) delete require.cache[k]; });

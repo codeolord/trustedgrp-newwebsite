@@ -32,6 +32,20 @@ Generate a session secret locally with `node -e "console.log(require('crypto').r
 
 For local API testing, use the Vercel CLI (`vercel dev`) with the same environment variables. The built-in `npm run dev` static server does not run Vercel API functions.
 
+### Embed chat on the Hostinger site
+
+The public `trustedgrp.com` website is hosted separately from this Vercel project. To keep the current Hostinger website and use its Neon-backed support inbox:
+
+1. In the Vercel project, add the custom domain `api.trustedgrp.com`. Add the exact DNS record Vercel requests in Hostinger; leave the apex and `www` records unchanged.
+2. Set `DATABASE_URL` to the rotated Neon pooled connection string, `SUPPORT_SESSION_SECRET` to a private value of at least 32 characters, and `SUPPORT_ADMIN_PASSWORD` to a staff password of at least 16 characters in Vercel Production. Redeploy after saving the variables.
+3. In Hostinger File Manager, edit `public_html/index.html`. Remove the old Tawk.to embed if replacing it, then add this script just before `</body>`:
+
+   ```html
+   <script src="https://api.trustedgrp.com/assets/hostinger-support.js" defer></script>
+   ```
+
+The loader opens the standalone `/support-widget` page in a same-site `api.trustedgrp.com` iframe, so chat API requests and secure visitor cookies stay on that subdomain. Staff can open `https://api.trustedgrp.com/support`. Keep the site's other markup and assets unchanged.
+
 ## Pages (51)
 
 | Area | Pages |

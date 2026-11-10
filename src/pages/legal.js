@@ -30,11 +30,11 @@ const privacy = legalPage('/privacy', 'Privacy Policy',
   `This Privacy Policy explains how ${site.name} (“we”, “us”) collects, uses and protects personal data when you use our website and services.`,
   [
     ['Who we are', [`${site.name} provides software for creating, issuing and verifying digital credentials. For questions about this policy, contact <a href="mailto:${site.email}">${site.email}</a>.`]],
-    ['Data we collect', ['We collect the following categories of data:', ['Account data, such as your name, email and organization.', 'Recipient data that our customers upload to issue credentials.', 'Usage data, such as pages visited and features used.', 'Billing data processed by our payment provider.']]],
+    ['Data we collect', ['We collect the following categories of data:', ['Account data, such as your name, email and organization.', 'Recipient data that our customers upload to issue credentials.', 'Support chat details, including the name you provide, optional email address, messages, timestamps and a pseudonymized network identifier used to limit abuse.', 'Usage data, such as pages visited and features used.', 'Billing data processed by our payment provider.']]],
     ['How we use data', ['We use personal data to provide and improve the service, communicate with you, process payments, ensure security and meet legal obligations.']],
     ['Recipients of credentials', ['When an organization issues you a credential, that organization is the controller of your data and we process it on their behalf. Contact the issuing organization to exercise your rights.']],
     ['Sharing', ['We share data only with service providers that help us operate the service (for example hosting, email delivery and payments), under contracts that protect your data. We do not sell personal data.']],
-    ['Retention', ['We keep personal data for as long as your account is active or as needed to provide the service, and delete or anonymize it afterwards unless the law requires otherwise.']],
+    ['Retention', ['We keep personal data for as long as your account is active or as needed to provide the service, respond to support requests, maintain records and prevent abuse, and delete or anonymize it afterwards unless the law requires otherwise.']],
     ['Your rights', ['Depending on where you live, you may have the right to access, correct, delete, restrict or port your data, and to object to processing. Contact us to exercise these rights.']],
     ['Changes', ['We may update this policy from time to time. We will notify you of material changes by email or through the service.']],
   ]);

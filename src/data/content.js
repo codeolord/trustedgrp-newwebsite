@@ -242,10 +242,9 @@ const changelog = [
 ];
 
 const team = [
-  ['Tolu Adebayo', 'Co-founder & CEO', 'var(--sky)'], ['Chinedu Nwosu', 'Co-founder & CTO', 'var(--peach)'],
-  ['Adaeze Okafor', 'Head of Content', 'var(--lav)'], ['Emeka Eze', 'Product Manager', 'var(--mint)'],
-  ['Yetunde Balogun', 'Customer Success Lead', 'var(--butter)'], ['Amina Yusuf', 'Lead Designer', 'var(--rose)'],
-  ['Favour Okonkwo', 'Engineering Manager', 'var(--sky)'], ['Ade Bello', 'Partnerships', 'var(--peach)'],
+  ['Babatunde Anjorin', 'Chairman', 'var(--sky)'], ['Tunde A. J.', 'Director', 'var(--peach)'],
+  ['Anuoluwapo Aderibigbe', 'HR', 'var(--lav)'], ['Kenneth Akintajuwa', 'Head of Sales', 'var(--mint)'],
+  ['Jackson Augustin', 'Head of Technology', 'var(--butter)'], ['Temi Anjorin', 'Technical Engineer', 'var(--rose)'],
 ];
 
 module.exports = {

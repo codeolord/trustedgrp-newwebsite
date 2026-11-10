@@ -5,8 +5,10 @@ dist/
 !.env.example
 .azure/
 .claude/
-.vscode/
+.vscode/*
+!.vscode/mcp.json
 .github/agents/
 *.log
 .DS_Store
 Thumbs.db
+.neon

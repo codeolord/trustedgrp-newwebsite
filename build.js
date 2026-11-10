@@ -5,7 +5,7 @@ const path = require('path');
 const ROOT = __dirname;
 const SRC = path.join(ROOT, 'src');
 const DIST = path.join(ROOT, 'dist');
-const PAGE_MODULES = ['home', 'pricing', 'features', 'solutions', 'templates', 'blog', 'company', 'legal'];
+const PAGE_MODULES = ['home', 'pricing', 'features', 'solutions', 'templates', 'blog', 'company', 'legal', 'support'];
 
 function clearRequireCache() {
   Object.keys(require.cache).forEach((k) => { if (k.startsWith(SRC)) delete require.cache[k]; });
@@ -50,7 +50,7 @@ function build({ quiet = false } = {}) {
   }
 
   const { domain } = require('./src/site');
-  const urls = pages.filter((p) => p.path !== '/404').map((p) => `  <url><loc>https://${domain}${p.path === '/' ? '/' : p.path}</loc></url>`);
+  const urls = pages.filter((p) => p.path !== '/404' && !p.noIndex).map((p) => `  <url><loc>https://${domain}${p.path === '/' ? '/' : p.path}</loc></url>`);
   fs.writeFileSync(path.join(DIST, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`);
   fs.writeFileSync(path.join(DIST, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: https://${domain}/sitemap.xml\n`);
 
